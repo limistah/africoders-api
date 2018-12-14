@@ -1,0 +1,23 @@
+{
+  "options": {
+    "ver": "1.0.0",
+    "inspectConflicts": false,
+    "semicolons": true,
+    "freeze": [],
+    "ts": false
+  },
+  "app": {
+    "environmentsAllowingSeedData": "tests",
+    "seedData": false,
+    "name": "africoders-api",
+    "description": "API for serving Africoders.com data",
+    "src": "src",
+    "packager": "npm@>= 3.0.0",
+    "providers": [
+      "rest",
+      "socketio"
+    ]
+  },
+  "services": {},
+  "hooks": {}
+}
