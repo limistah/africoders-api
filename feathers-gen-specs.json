@@ -64,7 +64,17 @@
       "graphql": true
     }
   },
-  "hooks": {},
+  "hooks": {
+    "log-to-history": {
+      "fileName": "log-to-history",
+      "camelName": "logToHistory",
+      "ifMulti": "y",
+      "multiServices": [
+        "*app"
+      ],
+      "singleService": ""
+    }
+  },
   "connections": {
     "mongoose": {
       "database": "mongodb",

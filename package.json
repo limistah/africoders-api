@@ -45,6 +45,7 @@
     "capitalize": "^2.0.0",
     "compression": "^1.7.3",
     "cors": "^2.8.4",
+    "cross-env": "^5.2.0",
     "feathers-hooks-common": "^4.19.0",
     "feathers-mongoose": "^6.2.0",
     "helmet": "^3.13.0",

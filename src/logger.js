@@ -1,3 +1,4 @@
+
 // Logger. (Can be re-generated.)
 const { createLogger, format, transports } = require('winston');
 // !code: imports
@@ -25,6 +26,7 @@ const moduleExports = createLogger({
   // !end
   // !code: moduleExports // !end
 });
+
 // !code: exports // !end
 module.exports = moduleExports;
 

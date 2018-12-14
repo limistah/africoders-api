@@ -1,6 +1,6 @@
 
 /* eslint quotes: 0 */
-// Validation definitions for validateSchema hook for service `roles`. (Can be re-generated.)
+// Validation definitions for validateSchema hook for service `histories`. (Can be re-generated.)
 const { validateSchema } = require('feathers-hooks-common');
 const merge = require('lodash.merge');
 const ajv = require('ajv');
@@ -15,40 +15,11 @@ const ID = 'string';
 let base = merge({},
   // !<DEFAULT> code: base
   {
-    title: "Roles",
-    description: "User Roles database.",
-    required: [
-      "name",
-      "displayName"
-    ],
+    title: "Histories",
+    description: "Histories database.",
+    required: [],
     uniqueItemProperties: [],
-    properties: {
-      name: {
-        minLength: 3,
-        maxLength: 15,
-        faker: "lorem.word",
-        type: "string"
-      },
-      displayName: {
-        minLength: 3,
-        maxLength: 15,
-        faker: "lorem.word",
-        type: "string"
-      },
-      weight: {
-        type: "number",
-        chance: "integer"
-      },
-      deletedAt: {
-        type: "number",
-        chance: {
-          integer: {
-            min: -1,
-            max: -1
-          }
-        }
-      }
-    }
+    properties: {}
   },
   // !end
   // !code: base_more // !end
@@ -70,9 +41,7 @@ let patch = merge({},
   { required: undefined },
   // !code: patch_more // !end
 );
-// !code: all_change
-patch.required = [];
-// !end
+// !code: all_change // !end
 
 let validateCreate = options => {
   // !<DEFAULT> code: func_create

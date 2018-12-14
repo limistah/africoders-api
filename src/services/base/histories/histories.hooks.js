@@ -1,22 +1,21 @@
 
-// Application hooks that run for every service. (Can be re-generated.)
+// Hooks for service `histories`. (Can be re-generated.)
 const commonHooks = require('feathers-hooks-common');
-// eslint-disable-next-line no-unused-vars
-const logToHistory = require('./hooks/log-to-history');
-// !<DEFAULT> code: imports
-const log = require('./hooks/log');
-// !end
+// !code: imports // !end
 
 // !<DEFAULT> code: used
 // eslint-disable-next-line no-unused-vars
 const { iff } = commonHooks;
+// eslint-disable-next-line no-unused-vars
+const { create, update, patch, validateCreate, validateUpdate, validatePatch } = require('./histories.validate');
 // !end
+
 // !code: init // !end
 
 let moduleExports = {
   before: {
-    // !code: before
-    all: [log(), softDelete2()],
+    // !<DEFAULT> code: before
+    all: [],
     find: [],
     get: [],
     create: [],
@@ -27,8 +26,8 @@ let moduleExports = {
   },
 
   after: {
-    // !code: after
-    all: [log()],
+    // !<DEFAULT> code: after
+    all: [],
     find: [],
     get: [],
     create: [],
@@ -40,7 +39,7 @@ let moduleExports = {
 
   error: {
     // !<DEFAULT> code: error
-    all: [ log() ],
+    all: [],
     find: [],
     get: [],
     create: [],
