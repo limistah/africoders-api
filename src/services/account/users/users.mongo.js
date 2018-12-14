@@ -53,6 +53,15 @@ let moduleExports = merge({},
       lastActivityAt: {
         format: "date-time",
         bsonType: "string"
+      },
+      deletedAt: {
+        chance: {
+          integer: {
+            min: -1,
+            max: -1
+          }
+        },
+        bsonType: "number"
       }
     },
     required: [

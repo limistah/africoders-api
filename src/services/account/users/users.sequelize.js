@@ -48,6 +48,9 @@ let moduleExports = merge({},
     },
     lastActivityAt: {
       type: DataTypes.DATE
+    },
+    deletedAt: {
+      type: DataTypes.REAL
     }
   },
   // !end

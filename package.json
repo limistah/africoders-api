@@ -31,25 +31,32 @@
     "mocha": "mocha test/ --recursive --exit --timeout 10000"
   },
   "dependencies": {
+    "@casl/ability": "^2.5.1",
+    "@casl/mongoose": "^2.2.2",
     "@feathersjs/configuration": "^2.0.4",
     "@feathersjs/errors": "^3.3.4",
     "@feathersjs/express": "^1.2.7",
     "@feathersjs/feathers": "^3.2.3",
     "@feathersjs/socketio": "^3.2.7",
     "ajv": "^5.5.2",
+    "capitalize": "^2.0.0",
     "compression": "^1.7.3",
     "cors": "^2.8.4",
     "feathers-hooks-common": "^4.19.0",
     "feathers-mongoose": "^6.2.0",
     "helmet": "^3.13.0",
+    "lodash": "^4.17.11",
     "lodash.merge": "^4.6.1",
     "mongodb-core": "^3.1.9",
     "mongoose": "^5.3.16",
     "serve-favicon": "^2.5.0",
-    "winston": "^3.0.0"
+    "winston": "^3.0.0",
+    "winston-mongodb": "^4.0.3"
   },
   "devDependencies": {
+    "babel-jest": "^23.6.0",
     "eslint": "^5.10.0",
+    "jest": "^23.6.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.18.7",
     "request": "^2.88.0",

@@ -22,7 +22,12 @@ let schema = {
 
   // Fields in the model.
   properties: {
-    // !code: schema_properties // !end
+    // !code: schema_properties
+    deviceName: {},
+    status: { boolean: ['LIVE', 'DEAD'] },
+    hits: { type: 'number' },
+    deletedAt: { type: 'number', chance: { integer: { min: -1, max: -1 } } }
+    // !end
   },
   // !code: schema_more // !end
 };
@@ -34,7 +39,7 @@ let extensions = {
     // !code: graphql_header
     name: 'ApiKey',
     service: {
-      sort: { _id: 1 },
+      sort: { _id: 1 }
     },
     // sql: {
     //   sqlTable: 'ApiKeys',

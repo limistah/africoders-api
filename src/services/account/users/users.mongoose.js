@@ -43,7 +43,8 @@ let moduleExports = merge({},
       required: true
     },
     lastLoginAt: String,
-    lastActivityAt: String
+    lastActivityAt: String,
+    deletedAt: Number
   },
   // !end
   // !code: moduleExports // !end

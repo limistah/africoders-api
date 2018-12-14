@@ -19,7 +19,30 @@ let base = merge({},
     description: "ApiKeys database.",
     required: [],
     uniqueItemProperties: [],
-    properties: {}
+    properties: {
+      deviceName: {
+        type: "string"
+      },
+      status: {
+        boolean: [
+          "LIVE",
+          "DEAD"
+        ],
+        type: "string"
+      },
+      hits: {
+        type: "number"
+      },
+      deletedAt: {
+        type: "number",
+        chance: {
+          integer: {
+            min: -1,
+            max: -1
+          }
+        }
+      }
+    }
   },
   // !end
   // !code: base_more // !end
@@ -41,7 +64,9 @@ let patch = merge({},
   { required: undefined },
   // !code: patch_more // !end
 );
-// !code: all_change // !end
+// !code: all_change
+patch.required = [];
+// !end
 
 let validateCreate = options => {
   // !<DEFAULT> code: func_create

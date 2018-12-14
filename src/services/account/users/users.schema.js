@@ -42,7 +42,8 @@ let schema = {
     roleId: {},
     password: {},
     lastLoginAt: { format: 'date-time' },
-    lastActivityAt: { format: 'date-time' }
+    lastActivityAt: { format: 'date-time' },
+    deletedAt: { type: 'number', chance: { integer: { min: -1, max: -1 } } }
     // !end
   },
   // !code: schema_more // !end

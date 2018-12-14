@@ -10,7 +10,20 @@ const DataTypes = Sequelize.DataTypes;
 
 let moduleExports = merge({},
   // !<DEFAULT> code: sequelize_model
-  {},
+  {
+    deviceName: {
+      type: DataTypes.TEXT
+    },
+    status: {
+      type: DataTypes.TEXT
+    },
+    hits: {
+      type: DataTypes.REAL
+    },
+    deletedAt: {
+      type: DataTypes.REAL
+    }
+  },
   // !end
   // !code: moduleExports // !end
 );

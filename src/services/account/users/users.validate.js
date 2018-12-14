@@ -69,6 +69,15 @@ let base = merge({},
       lastActivityAt: {
         format: "date-time",
         type: "string"
+      },
+      deletedAt: {
+        type: "number",
+        chance: {
+          integer: {
+            min: -1,
+            max: -1
+          }
+        }
       }
     }
   },
@@ -92,7 +101,9 @@ let patch = merge({},
   { required: undefined },
   // !code: patch_more // !end
 );
-// !code: all_change // !end
+// !code: all_change
+patch.required = [];
+// !end
 
 let validateCreate = options => {
   // !<DEFAULT> code: func_create

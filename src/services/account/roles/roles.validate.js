@@ -1,4 +1,3 @@
-
 /* eslint quotes: 0 */
 // Validation definitions for validateSchema hook for service `roles`. (Can be re-generated.)
 const { validateSchema } = require('feathers-hooks-common');
@@ -12,35 +11,33 @@ const ajv = require('ajv');
 const ID = 'string';
 // !end
 
-let base = merge({},
+let base = merge(
+  {},
   // !<DEFAULT> code: base
   {
-    title: "Roles",
-    description: "User Roles database.",
-    required: [
-      "name",
-      "displayName"
-    ],
+    title: 'Roles',
+    description: 'User Roles database.',
+    required: ['name', 'displayName'],
     uniqueItemProperties: [],
     properties: {
       name: {
         minLength: 3,
         maxLength: 15,
-        faker: "lorem.word",
-        type: "string"
+        faker: 'lorem.word',
+        type: 'string'
       },
       displayName: {
         minLength: 3,
         maxLength: 15,
-        faker: "lorem.word",
-        type: "string"
+        faker: 'lorem.word',
+        type: 'string'
       },
       weight: {
-        type: "number",
-        chance: "integer"
+        type: 'number',
+        chance: 'integer'
       },
       deletedAt: {
-        type: "number",
+        type: 'number',
         chance: {
           integer: {
             min: -1,
@@ -49,42 +46,47 @@ let base = merge({},
         }
       }
     }
-  },
+  }
   // !end
   // !code: base_more // !end
 );
 // !code: base_change // !end
 
-let create = merge({},
-  base,
+let create = merge(
+  {},
+  base
   // !code: create_more // !end
 );
 
-let update = merge({},
-  base,
+let update = merge(
+  {},
+  base
   // !code: update_more // !end
 );
 
-let patch = merge({},
+let patch = merge(
+  {},
   base,
-  { required: undefined },
+  { required: undefined }
   // !code: patch_more // !end
 );
-// !code: all_change // !end
+// !code: all_change
+patch.required = [];
+// !end
 
-let validateCreate = options => {
+let validateCreate = (options) => {
   // !<DEFAULT> code: func_create
   return validateSchema(create, ajv, options);
   // !end
 };
 
-let validateUpdate = options => {
+let validateUpdate = (options) => {
   // !<DEFAULT> code: func_update
   return validateSchema(update, ajv, options);
   // !end
 };
 
-let validatePatch = options => {
+let validatePatch = (options) => {
   // !<DEFAULT> code: func_patch
   return validateSchema(patch, ajv, options);
   // !end
@@ -92,9 +94,15 @@ let validatePatch = options => {
 
 let quickValidate = (method, data, options) => {
   try {
-    if (method === 'create') { validateCreate(options)({ type: 'before', method: 'create', data }); }
-    if (method === 'update') { validateCreate(options)({ type: 'before', method: 'update', data }); }
-    if (method === 'patch') { validateCreate(options)({ type: 'before', method: 'patch', data }); }
+    if (method === 'create') {
+      validateCreate(options)({ type: 'before', method: 'create', data });
+    }
+    if (method === 'update') {
+      validateCreate(options)({ type: 'before', method: 'update', data });
+    }
+    if (method === 'patch') {
+      validateCreate(options)({ type: 'before', method: 'patch', data });
+    }
   } catch (err) {
     return err;
   }
@@ -108,7 +116,7 @@ let moduleExports = {
   validateCreate,
   validateUpdate,
   validatePatch,
-  quickValidate,
+  quickValidate
   // !code: moduleExports // !end
 };
 

@@ -13,6 +13,28 @@ let moduleExports = merge({},
     properties: {
       _id: {
         bsonType: "objectId"
+      },
+      deviceName: {
+        bsonType: "string"
+      },
+      status: {
+        boolean: [
+          "LIVE",
+          "DEAD"
+        ],
+        bsonType: "string"
+      },
+      hits: {
+        bsonType: "number"
+      },
+      deletedAt: {
+        chance: {
+          integer: {
+            min: -1,
+            max: -1
+          }
+        },
+        bsonType: "number"
       }
     }
   },
