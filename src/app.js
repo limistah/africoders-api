@@ -19,6 +19,7 @@ const appHooks = require('./app.hooks');
 const channels = require('./channels');
 const generatorSpecs = require('../feathers-gen-specs.json');
 
+const mongoose = require('./mongoose');
 // !code: imports // !end
 // !code: init // !end
 
@@ -52,6 +53,8 @@ app.configure(express.rest(
 app.configure(socketio(
   // !code: express_socketio // !end
 ));
+// Configure database adapters
+app.configure(mongoose);
 
 // Configure other middleware (see `middleware/index.js`)
 app.configure(middleware);

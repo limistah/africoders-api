@@ -10,5 +10,6 @@
     "environmentsAllowingSeedData": [
       "tests"
     ]
-  }
+  },
+  "mongodb": "mongodb://localhost:27017/africoders_api"
 }
