@@ -11,15 +11,18 @@ const log = require('./hooks/log');
 const { iff, isProvider, softDelete2 } = commonHooks;
 // !end
 // !code: init
-const shouldLogToHistory = () => {
-  return iff(isProvider('external'), logToHistory());
+// const shouldLogToHistory = () => {
+//   return iff(isProvider('external'), logToHistory());
+// };
+const runOnExternal = (hook = () => {}, params = []) => {
+  return iff(isProvider('external'), hook.call(null, ...params));
 };
 // !end
 
 let moduleExports = {
   before: {
     // !code: before
-    all: [log(), shouldLogToHistory(), softDelete2()],
+    all: [log(), runOnExternal(logToHistory), runOnExternal(softDelete2)],
     find: [],
     get: [],
     create: [],
@@ -31,7 +34,7 @@ let moduleExports = {
 
   after: {
     // !code: after
-    all: [log()],
+    all: [log(), runOnExternal(logToHistory)],
     find: [],
     get: [],
     create: [],
@@ -42,8 +45,8 @@ let moduleExports = {
   },
 
   error: {
-    // !<DEFAULT> code: error
-    all: [log()],
+    // !code: error
+    all: [log(), runOnExternal(logToHistory)],
     find: [],
     get: [],
     create: [],

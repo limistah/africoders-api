@@ -43,7 +43,7 @@ module.exports = function(options = {}) {
     const provider = (params && params.provider) || '';
     // Don't do anything if we are calling the history service itself
     if (context.path !== 'history') {
-      const historyService = context.app.service('/history');
+      const historyService = context.app.service('/histories');
       // Construct the data
       const data = {
         path,
@@ -53,6 +53,7 @@ module.exports = function(options = {}) {
         user,
         provider
       };
+      console.log(data); // eslint-disable-line
       await historyService.create(data);
     }
     // Best practice: hooks should always return the context.
