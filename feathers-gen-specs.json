@@ -28,6 +28,16 @@
       "path": "/roles",
       "isAuthEntity": false,
       "graphql": true
+    },
+    "users": {
+      "name": "users",
+      "nameSingular": "user",
+      "subFolder": "account",
+      "fileName": "users",
+      "adapter": "mongoose",
+      "path": "/users",
+      "isAuthEntity": false,
+      "graphql": true
     }
   },
   "hooks": {},

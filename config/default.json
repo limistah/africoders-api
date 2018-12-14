@@ -3,16 +3,27 @@
   "port": 3030,
   "public": "../public/",
   "supportedRoles": [
-    { "name": "Member", "displayName": "Member" },
-    { "name": "Moderator", "displayName": "Moderator" },
-    { "name": "Administrator", "displayName": "Administrator" }
+    {
+      "name": "Member",
+      "displayName": "Member"
+    },
+    {
+      "name": "Moderator",
+      "displayName": "Moderator"
+    },
+    {
+      "name": "Administrator",
+      "displayName": "Administrator"
+    }
   ],
   "paginate": {
     "default": 10,
     "max": 50
   },
   "tests": {
-    "environmentsAllowingSeedData": ["tests"]
+    "environmentsAllowingSeedData": [
+      "tests"
+    ]
   },
   "mongodb": "mongodb://localhost:27017/africoders_api"
 }
