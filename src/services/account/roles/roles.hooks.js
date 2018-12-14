@@ -1,4 +1,3 @@
-
 // Hooks for service `roles`. (Can be re-generated.)
 const commonHooks = require('feathers-hooks-common');
 // !code: imports // !end
@@ -7,7 +6,11 @@ const commonHooks = require('feathers-hooks-common');
 // eslint-disable-next-line no-unused-vars
 const { iff } = commonHooks;
 // eslint-disable-next-line no-unused-vars
-const { create, update, patch, validateCreate, validateUpdate, validatePatch } = require('./roles.validate');
+const {
+  validateCreate,
+  validateUpdate,
+  validatePatch
+} = require('./roles.validate');
 // !end
 
 // !code: init // !end
@@ -18,9 +21,9 @@ let moduleExports = {
     all: [],
     find: [],
     get: [],
-    create: [],
-    update: [],
-    patch: [],
+    create: [validateCreate()],
+    update: [validateUpdate()],
+    patch: [validatePatch()],
     remove: []
     // !end
   },
@@ -47,7 +50,7 @@ let moduleExports = {
     patch: [],
     remove: []
     // !end
-  },
+  }
   // !code: moduleExports // !end
 };
 
