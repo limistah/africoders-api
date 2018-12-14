@@ -21,6 +21,13 @@ let base = merge({},
     uniqueItemProperties: [],
     properties: {
       deviceName: {
+        enum: [
+          "mobile-android",
+          "mobile-ios",
+          "mobile-browser",
+          "desktop",
+          "generic"
+        ],
         type: "string"
       },
       status: {

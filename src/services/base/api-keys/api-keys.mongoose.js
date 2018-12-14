@@ -10,7 +10,16 @@ const mongoose = require('mongoose');
 let moduleExports = merge({},
   // !<DEFAULT> code: model
   {
-    deviceName: String,
+    deviceName: {
+      type: String,
+      enum: [
+        "mobile-android",
+        "mobile-ios",
+        "mobile-browser",
+        "desktop",
+        "generic"
+      ]
+    },
     status: String,
     hits: Number,
     deletedAt: Number

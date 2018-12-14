@@ -23,7 +23,15 @@ let schema = {
   // Fields in the model.
   properties: {
     // !code: schema_properties
-    deviceName: {},
+    deviceName: {
+      enum: [
+        'mobile-android',
+        'mobile-ios',
+        'mobile-browser',
+        'desktop',
+        'generic'
+      ]
+    },
     status: { boolean: ['LIVE', 'DEAD'] },
     hits: { type: 'number' },
     deletedAt: { type: 'number', chance: { integer: { min: -1, max: -1 } } }

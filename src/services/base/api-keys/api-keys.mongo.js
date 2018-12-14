@@ -15,6 +15,13 @@ let moduleExports = merge({},
         bsonType: "objectId"
       },
       deviceName: {
+        enum: [
+          "mobile-android",
+          "mobile-ios",
+          "mobile-browser",
+          "desktop",
+          "generic"
+        ],
         bsonType: "string"
       },
       status: {
