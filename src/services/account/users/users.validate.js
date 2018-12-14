@@ -53,7 +53,7 @@ let base = merge({},
         type: "string"
       },
       ipAddress: {
-        format: "ip",
+        format: "ipv4",
         type: "string"
       },
       roleId: {

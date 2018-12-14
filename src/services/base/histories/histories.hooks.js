@@ -9,7 +9,7 @@ const {
   validateCreate,
   validateUpdate,
   validatePatch
-} = require('./history.validate');
+} = require('./histories.validate');
 // !end
 
 // !code: init // !end

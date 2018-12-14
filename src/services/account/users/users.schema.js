@@ -38,7 +38,7 @@ let schema = {
     emailVerified: { type: 'boolean' },
     emailVerificationKey: {},
     gender: { enum: ['Male', 'Female'] },
-    ipAddress: { format: 'ip' },
+    ipAddress: { format: 'ipv4' },
     roleId: {},
     password: {},
     lastLoginAt: { format: 'date-time' },

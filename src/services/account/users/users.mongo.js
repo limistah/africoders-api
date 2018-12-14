@@ -37,7 +37,7 @@ let moduleExports = merge({},
         bsonType: "string"
       },
       ipAddress: {
-        format: "ip",
+        format: "ipv4",
         bsonType: "string"
       },
       roleId: {
