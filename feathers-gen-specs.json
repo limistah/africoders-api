@@ -38,8 +38,9 @@
       "fileName": "users",
       "adapter": "mongoose",
       "path": "/users",
-      "isAuthEntity": false,
-      "graphql": true
+      "isAuthEntity": true,
+      "graphql": true,
+      "requiresAuth": true
     },
     "apiKeys": {
       "name": "apiKeys",
@@ -50,6 +51,17 @@
       "path": "/api-keys",
       "isAuthEntity": false,
       "graphql": true
+    },
+    "histories": {
+      "name": "histories",
+      "nameSingular": "history",
+      "subFolder": "base",
+      "fileName": "histories",
+      "adapter": "mongoose",
+      "path": "/histories",
+      "isAuthEntity": false,
+      "requiresAuth": false,
+      "graphql": true
     }
   },
   "hooks": {},
@@ -59,5 +71,11 @@
       "adapter": "mongoose",
       "connectionString": "mongodb://localhost:27017/africoders_api"
     }
+  },
+  "authentication": {
+    "strategies": [
+      "local"
+    ],
+    "entity": "users"
   }
 }

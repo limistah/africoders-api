@@ -1,6 +1,9 @@
 
 // Hooks for service `users`. (Can be re-generated.)
 const commonHooks = require('feathers-hooks-common');
+const { authenticate } = require('@feathersjs/authentication').hooks;
+// eslint-disable-next-line no-unused-vars
+const { hashPassword, protect } = require('@feathersjs/authentication-local').hooks;
 // !code: imports // !end
 
 // !<DEFAULT> code: used
@@ -14,20 +17,29 @@ const { create, update, patch, validateCreate, validateUpdate, validatePatch } =
 
 let moduleExports = {
   before: {
+    // Your hooks should include:
+    //   find  : authenticate('jwt')
+    //   get   : authenticate('jwt')
+    //   create: hashPassword()
+    //   update: hashPassword(), authenticate('jwt')
+    //   patch : hashPassword(), authenticate('jwt')
+    //   remove: authenticate('jwt')
     // !<DEFAULT> code: before
     all: [],
-    find: [],
-    get: [],
-    create: [],
-    update: [],
-    patch: [],
-    remove: []
+    find: [ authenticate('jwt') ],
+    get: [ authenticate('jwt') ],
+    create: [ hashPassword() ],
+    update: [ hashPassword(), authenticate('jwt') ],
+    patch: [ hashPassword(), authenticate('jwt') ],
+    remove: [ authenticate('jwt') ]
     // !end
   },
 
   after: {
+    // Your hooks should include:
+    //   all   : protect('password') /* Must always be the last hook */
     // !<DEFAULT> code: after
-    all: [],
+    all: [ protect('password') /* Must always be the last hook */ ],
     find: [],
     get: [],
     create: [],

@@ -8,6 +8,9 @@ const DataTypes = Sequelize.DataTypes;
 // !code: imports // !end
 // !code: init // !end
 
+// Your model may need the following fields:
+//   email:      { type: DataTypes.STRING, allowNull: false, unique: true },
+//   password:   { type: DataTypes.STRING, allowNull: false },
 let moduleExports = merge({},
   // !<DEFAULT> code: sequelize_model
   {

@@ -25,5 +25,29 @@
       "tests"
     ]
   },
-  "mongodb": "mongodb://localhost:27017/africoders_api"
+  "mongodb": "mongodb://localhost:27017/africoders_api",
+  "authentication": {
+    "secret": "1c26163dbc1ee67cd619327fcb3fb7de0089736d7fceb7567b112bd3c7b1f1e16c66922b607714568184183ceec0efd22dee5db5eb669dfbb63a8e554c6fdbd77e95c3fd69d15f9dcc41a257fc7324ebc27852c2a27048b0c567dbd4b72bc95e027ea11dcaef9af26c28bb613acc88230af705de9bfb8384c8d6c24a8fc0035511775d948b4110c82867634dd3bc87f15fa0203b11bc4552d6d8e62692796d88a04cbd0eccca6e37731c560c9106960c0ff832d55385933417daa58322e8c21aaf2b27fe12bb4ef16fb4eb9b1e6b0eefc176d4d80399ddccb85de2feebe4a92bd6c4a97901ff3300d9a85f4f0148b98d01975125302fd166c194b6a0fc450752",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  }
 }
