@@ -1,7 +1,7 @@
-
 // Hooks for service `histories`. (Can be re-generated.)
-const commonHooks = require('feathers-hooks-common');
-// !code: imports // !end
+// !code: imports
+const preventHistoryMutation = require('./hooks/prevent-history-mutation');
+// !end
 
 // !code: used
 // eslint-disable-next-line no-unused-vars
@@ -49,7 +49,7 @@ let moduleExports = {
     patch: [],
     remove: []
     // !end
-  },
+  }
   // !code: moduleExports // !end
 };
 
