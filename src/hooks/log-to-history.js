@@ -53,7 +53,6 @@ module.exports = function(options = {}) {
         user,
         provider
       };
-      console.log(data); // eslint-disable-line
       await historyService.create(data);
     }
     // Best practice: hooks should always return the context.

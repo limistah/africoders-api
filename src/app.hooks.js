@@ -1,14 +1,22 @@
 // Application hooks that run for every service. (Can be re-generated.)
 const commonHooks = require('feathers-hooks-common');
 // eslint-disable-next-line no-unused-vars
+const authenticate = require('./hooks/authenticate');
+// eslint-disable-next-line no-unused-vars
+const authorizeUserAction = require('./hooks/authorize-user-action');
+// eslint-disable-next-line no-unused-vars
+const escapeAuthCheck = require('./hooks/escape-auth-check');
+// eslint-disable-next-line no-unused-vars
 const logToHistory = require('./hooks/log-to-history');
+// eslint-disable-next-line no-unused-vars
+const skipRemainingHook = require('./hooks/skip-remaining-hook');
 // !<DEFAULT> code: imports
 const log = require('./hooks/log');
 // !end
 
 // !code: used
 // eslint-disable-next-line no-unused-vars
-const { iff, isProvider, softDelete2 } = commonHooks;
+const { iff, isProvider, softDelete2, when } = commonHooks;
 // !end
 // !code: init
 // const shouldLogToHistory = () => {
@@ -17,12 +25,20 @@ const { iff, isProvider, softDelete2 } = commonHooks;
 const runOnExternal = (hook = () => {}, params = []) => {
   return iff(isProvider('external'), hook.call(null, ...params));
 };
+const shouldAuthorizeAction = () => {
+  return when(escapeAuthCheck(), authenticate(), authorizeUserAction({}));
+};
 // !end
 
 let moduleExports = {
   before: {
     // !code: before
-    all: [log(), runOnExternal(logToHistory), runOnExternal(softDelete2)],
+    all: [
+      log(),
+      runOnExternal(logToHistory),
+      runOnExternal(shouldAuthorizeAction),
+      // runOnExternal(softDelete2)
+    ],
     find: [],
     get: [],
     create: [],

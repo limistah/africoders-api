@@ -1,4 +1,6 @@
 // Hooks for service `histories`. (Can be re-generated.)
+// eslint-disable-next-line
+const commonHooks = require('feathers-hooks-common');
 // !code: imports
 const preventHistoryMutation = require('./hooks/prevent-history-mutation');
 // !end
@@ -40,7 +42,7 @@ let moduleExports = {
   },
 
   error: {
-    // !<DEFAULT> code: error
+    // !code: error
     all: [],
     find: [],
     get: [],

@@ -73,6 +73,42 @@
         "*app"
       ],
       "singleService": ""
+    },
+    "authenticate": {
+      "fileName": "authenticate",
+      "camelName": "authenticate",
+      "ifMulti": "y",
+      "multiServices": [
+        "*app"
+      ],
+      "singleService": ""
+    },
+    "authorize-user-action": {
+      "fileName": "authorize-user-action",
+      "camelName": "authorizeUserAction",
+      "ifMulti": "y",
+      "multiServices": [
+        "*app"
+      ],
+      "singleService": ""
+    },
+    "escape-auth-check": {
+      "fileName": "escape-auth-check",
+      "camelName": "escapeAuthCheck",
+      "ifMulti": "y",
+      "multiServices": [
+        "*app"
+      ],
+      "singleService": ""
+    },
+    "skip-remaining-hook": {
+      "fileName": "skip-remaining-hook",
+      "camelName": "skipRemainingHook",
+      "ifMulti": "y",
+      "multiServices": [
+        "*app"
+      ],
+      "singleService": ""
     }
   },
   "connections": {

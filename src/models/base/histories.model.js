@@ -6,7 +6,12 @@
 // !<DEFAULT> code: mongoose_schema
 const mongooseSchema = require('../../services/base/histories/histories.mongoose');
 // !end
-// !code: mongoose_imports // !end
+// !code: mongoose_imports
+const {
+  accessibleFieldsPlugin,
+  accessibleRecordsPlugin
+} = require('@casl/mongoose');
+// !end
 // !code: mongoose_init // !end
 
 let moduleExports = function (app) {
@@ -15,6 +20,8 @@ let moduleExports = function (app) {
 
   // !<DEFAULT> code: mongoose_client
   const histories = new mongooseClient.Schema(mongooseSchema, { timestamps: true });
+  histories.plugin(accessibleFieldsPlugin);
+  histories.plugin(accessibleRecordsPlugin);
   // !end
 
   let existingModel = mongooseClient.models['histories']; // needed for client/server tests

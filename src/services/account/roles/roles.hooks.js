@@ -1,8 +1,9 @@
+
 // Hooks for service `roles`. (Can be re-generated.)
 const commonHooks = require('feathers-hooks-common');
 // !code: imports // !end
 
-// !<DEFAULT> code: used
+// !code: used
 // eslint-disable-next-line no-unused-vars
 const { iff } = commonHooks;
 // eslint-disable-next-line no-unused-vars
@@ -17,7 +18,7 @@ const {
 
 let moduleExports = {
   before: {
-    // !<DEFAULT> code: before
+    // !code: before
     all: [],
     find: [],
     get: [],
@@ -29,7 +30,7 @@ let moduleExports = {
   },
 
   after: {
-    // !<DEFAULT> code: after
+    // !code: after
     all: [],
     find: [],
     get: [],
@@ -41,7 +42,7 @@ let moduleExports = {
   },
 
   error: {
-    // !<DEFAULT> code: error
+    // !code: error
     all: [],
     find: [],
     get: [],
@@ -50,7 +51,7 @@ let moduleExports = {
     patch: [],
     remove: []
     // !end
-  }
+  },
   // !code: moduleExports // !end
 };
 

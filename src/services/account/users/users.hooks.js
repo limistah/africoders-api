@@ -7,7 +7,7 @@ const {
 } = require('@feathersjs/authentication-local').hooks;
 // !code: imports // !end
 
-// !<DEFAULT> code: used
+// !code: used
 // eslint-disable-next-line no-unused-vars
 const { iff } = commonHooks;
 // eslint-disable-next-line no-unused-vars
@@ -29,7 +29,7 @@ let moduleExports = {
     //   update: hashPassword(), authenticate('jwt')
     //   patch : hashPassword(), authenticate('jwt')
     //   remove: authenticate('jwt')
-    // !<DEFAULT> code: before
+    // !code: before
     all: [],
     find: [],
     get: [],
@@ -43,7 +43,7 @@ let moduleExports = {
   after: {
     // Your hooks should include:
     //   all   : protect('password') /* Must always be the last hook */
-    // !<DEFAULT> code: after
+    // !code: after
     all: [protect('password') /* Must always be the last hook */],
     find: [],
     get: [],
