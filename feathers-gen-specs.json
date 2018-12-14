@@ -3,7 +3,7 @@
     "ver": "1.0.0",
     "inspectConflicts": false,
     "semicolons": true,
-    "freeze": [],
+    "freeze": ["logger.js"],
     "ts": false
   },
   "app": {
@@ -13,10 +13,7 @@
     "description": "API for serving Africoders.com data",
     "src": "src",
     "packager": "npm@>= 3.0.0",
-    "providers": [
-      "rest",
-      "socketio"
-    ]
+    "providers": ["rest", "socketio"]
   },
   "services": {
     "roles": {
