@@ -17,9 +17,45 @@ let base = merge({},
   {
     title: "Histories",
     description: "Histories database.",
-    required: [],
+    required: [
+      "path",
+      "type",
+      "method"
+    ],
     uniqueItemProperties: [],
-    properties: {}
+    properties: {
+      type: {
+        enum: [
+          "before",
+          "after",
+          "error"
+        ],
+        type: "string"
+      },
+      path: {
+        type: "string"
+      },
+      method: {
+        enum: [
+          "find",
+          "get",
+          "create",
+          "update",
+          "patch",
+          "remove"
+        ],
+        type: "string"
+      },
+      meta: {
+        type: "object"
+      },
+      user: {
+        type: "object"
+      },
+      provider: {
+        type: "string"
+      }
+    }
   },
   // !end
   // !code: base_more // !end
@@ -41,7 +77,9 @@ let patch = merge({},
   { required: undefined },
   // !code: patch_more // !end
 );
-// !code: all_change // !end
+// !code: all_change
+patch.required = [];
+// !end
 
 let validateCreate = options => {
   // !<DEFAULT> code: func_create

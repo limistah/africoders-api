@@ -13,8 +13,56 @@ let moduleExports = merge({},
     properties: {
       _id: {
         bsonType: "objectId"
+      },
+      type: {
+        enum: [
+          "before",
+          "after",
+          "error"
+        ],
+        bsonType: "string"
+      },
+      path: {
+        bsonType: "string"
+      },
+      method: {
+        enum: [
+          "find",
+          "get",
+          "create",
+          "update",
+          "patch",
+          "remove"
+        ],
+        bsonType: "string"
+      },
+      meta: {
+        bsonType: "object",
+        additionalProperties: false,
+        properties: {
+          _id: {
+            bsonType: "objectId"
+          }
+        }
+      },
+      user: {
+        bsonType: "object",
+        additionalProperties: false,
+        properties: {
+          _id: {
+            bsonType: "objectId"
+          }
+        }
+      },
+      provider: {
+        bsonType: "string"
       }
-    }
+    },
+    required: [
+      "path",
+      "type",
+      "method"
+    ]
   },
   // !end
   // !code: moduleExports // !end

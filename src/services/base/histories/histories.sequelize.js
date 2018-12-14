@@ -10,7 +10,29 @@ const DataTypes = Sequelize.DataTypes;
 
 let moduleExports = merge({},
   // !<DEFAULT> code: sequelize_model
-  {},
+  {
+    type: {
+      type: Sequelize.ENUM(["before","after","error"]),
+      allowNull: false
+    },
+    path: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
+    method: {
+      type: Sequelize.ENUM(["find","get","create","update","patch","remove"]),
+      allowNull: false
+    },
+    meta: {
+      type: DataTypes.JSONB
+    },
+    user: {
+      type: DataTypes.JSONB
+    },
+    provider: {
+      type: DataTypes.TEXT
+    }
+  },
   // !end
   // !code: moduleExports // !end
 );

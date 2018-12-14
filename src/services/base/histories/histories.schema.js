@@ -13,7 +13,9 @@ let schema = {
 
   // Required fields.
   required: [
-    // !code: schema_required // !end
+    // !code: schema_required
+    'path', 'type', 'method'
+    // !end
   ],
   // Fields with unique values.
   uniqueItemProperties: [
@@ -22,7 +24,22 @@ let schema = {
 
   // Fields in the model.
   properties: {
-    // !code: schema_properties // !end
+    // !code: schema_properties
+    type: {
+      enum: ['before', 'after', 'error']
+    },
+    path: {},
+    method: {
+      enum: ['find', 'get', 'create', 'update', 'patch', 'remove']
+    },
+    meta: {
+      type: 'object'
+    },
+    user: {
+      type: 'object'
+    },
+    provider: {}
+    // !end
   },
   // !code: schema_more // !end
 };
@@ -34,10 +51,12 @@ let extensions = {
     // !code: graphql_header
     name: 'History',
     service: {
-      sort: { _id: 1 },
+      sort: {
+        _id: 1
+      },
     },
     // sql: {
-    //   sqlTable: 'Histories',
+    //   sqlTable: 'History',
     //   uniqueKey: '_id',
     //   sqlColumn: {
     //     __authorId__: '__author_id__',
