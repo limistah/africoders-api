@@ -1,5 +1,6 @@
 
 // Configure the Feathers services. (Can be re-generated.)
+let apiKeys = require('./base/api-keys/api-keys.service');
 let roles = require('./account/roles/roles.service');
 let users = require('./account/users/users.service');
 
@@ -8,6 +9,7 @@ let users = require('./account/users/users.service');
 
 // eslint-disable-next-line no-unused-vars
 let moduleExports = function (app) {
+  app.configure(apiKeys);
   app.configure(roles);
   app.configure(users);
   // !code: func_return // !end

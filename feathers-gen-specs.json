@@ -38,6 +38,16 @@
       "path": "/users",
       "isAuthEntity": false,
       "graphql": true
+    },
+    "apiKeys": {
+      "name": "apiKeys",
+      "nameSingular": "apiKey",
+      "subFolder": "base",
+      "fileName": "api-keys",
+      "adapter": "mongoose",
+      "path": "/api-keys",
+      "isAuthEntity": false,
+      "graphql": true
     }
   },
   "hooks": {},
