@@ -35,14 +35,14 @@ module.exports = function(options = {}) {
     }
     // Get the query if set
     if (params && params.query) {
-      meta.query = params.query;
+      meta.query = JSON.stringify(params.query);
     }
     // Use the user from the params or use an empty object
     const user = (params && params.user) || {};
     // Set where the request is coming from
     const provider = (params && params.provider) || '';
     // Don't do anything if we are calling the history service itself
-    if (context.path !== 'history') {
+    if (context.path !== 'histories') {
       const historyService = context.app.service('/histories');
       // Construct the data
       const data = {
@@ -53,6 +53,7 @@ module.exports = function(options = {}) {
         user,
         provider
       };
+      // console.log(data);
       await historyService.create(data);
     }
     // Best practice: hooks should always return the context.

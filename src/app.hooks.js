@@ -37,7 +37,7 @@ let moduleExports = {
       log(),
       runOnExternal(logToHistory),
       runOnExternal(shouldAuthorizeAction),
-      // runOnExternal(softDelete2)
+      softDelete2()
     ],
     find: [],
     get: [],
@@ -50,7 +50,10 @@ let moduleExports = {
 
   after: {
     // !code: after
-    all: [log(), runOnExternal(logToHistory)],
+    all: [
+      log(),
+      runOnExternal(logToHistory)
+    ],
     find: [],
     get: [],
     create: [],
