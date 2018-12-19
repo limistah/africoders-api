@@ -26,7 +26,7 @@ let moduleExports = {
     all: [],
     find: [],
     get: [],
-    create: [validateCreate(), hashPassword(), populateProfileData()],
+    create: [validateCreate(), hashPassword()],
     update: [validateUpdate(), hashPassword()],
     patch: [validatePatch(), hashPassword()],
     remove: []
@@ -40,7 +40,7 @@ let moduleExports = {
     all: [protect('password') /* Must always be the last hook */],
     find: [],
     get: [],
-    create: [],
+    create: [populateProfileData()],
     update: [],
     patch: [],
     remove: []

@@ -12,11 +12,23 @@ module.exports = function (options = {}) {
     // Throw if the hook is being called from an unexpected location.
     checkContext(context, null, ['create']);
     // Create a profile data for the new user
-    const profileDataRecord = context.app.service('/profile-data').create();
     // getItems always returns an array to simplify your processing.
     const records = getItems(context);
-    // Sets the profile data id
-    records.profileDataId = profileDataRecord._id.toString();
+    if (Array.isArray(records)) {
+      for (let i = 0; i < records.length; i++) {
+        const element = records[i];
+        const data = {userId: element._id.toString()};
+        const result = await context.app.service('/profile-data').create(data);
+        // Sets the profile data id
+        element.profileDataId = result._id.toString();
+      }
+    } else {
+
+      const data = {userId: records._id.toString()};
+      const result = await context.app.service('/profile-data').create(data);
+      // Sets the profile data id
+      records.profileDataId = result._id.toString();
+    }
     // Place the modified records back in the context.
     replaceItems(context, records);
     // Best practice: hooks should always return the context.

@@ -24,6 +24,7 @@ let schema = {
   properties: {
     // !code: schema_properties
     firstname: {},
+    userId: {},
     lastname: {},
     biography: {},
     website: {},
