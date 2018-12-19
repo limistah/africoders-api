@@ -4,7 +4,11 @@
     "inspectConflicts": false,
     "semicolons": true,
     "freeze": [
-      "logger.js"
+      "logger.js",
+      "src/services/account/users/users.hooks.js",
+      "src/services/account/roles/roles.hooks.js",
+      "src/services/base/api-keys/api-keys.hooks.js",
+      "src/services/base/histories/histories.hooks.js"
     ],
     "ts": false
   },
