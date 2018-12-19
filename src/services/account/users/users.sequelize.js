@@ -42,6 +42,9 @@ let moduleExports = merge({},
       type: DataTypes.TEXT,
       allowNull: false
     },
+    profileDataId: {
+      type: DataTypes.TEXT
+    },
     password: {
       type: DataTypes.TEXT,
       allowNull: false

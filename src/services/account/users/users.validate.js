@@ -59,6 +59,9 @@ let base = merge({},
       roleId: {
         type: "string"
       },
+      profileDataId: {
+        type: "string"
+      },
       password: {
         type: "string"
       },

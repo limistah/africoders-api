@@ -40,6 +40,7 @@ let schema = {
     gender: { enum: ['Male', 'Female'] },
     ipAddress: { format: 'ipv4' },
     roleId: {},
+    profileDataId: {},
     password: {},
     lastLoginAt: { format: 'date-time' },
     lastActivityAt: { format: 'date-time' },
