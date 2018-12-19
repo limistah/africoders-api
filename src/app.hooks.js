@@ -31,6 +31,12 @@ const runOnExternal = (hook = () => {}, params = []) => {
 const shouldAuthorizeAction = () => {
   return when(escapeAuthCheck(), authenticate(), authorizeUserAction({}));
 };
+const shouldAllowApiKeyEndpoints = () => {
+  return (context) => {
+    return isProvider('external')(context) && escapeAuthCheck()(context);
+  };
+};
+
 // !end
 
 let moduleExports = {
@@ -38,6 +44,7 @@ let moduleExports = {
     // !code: before
     all: [
       log(),
+      iff(shouldAllowApiKeyEndpoints(), validateApiKey()),
       runOnExternal(logToHistory),
       runOnExternal(shouldAuthorizeAction),
       softDelete2()
