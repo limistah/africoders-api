@@ -19,7 +19,7 @@ const log = require('./hooks/log');
 
 // !code: used
 // eslint-disable-next-line no-unused-vars
-const { iff, isProvider, softDelete2, when, removeQuery } = commonHooks;
+const { iff, isProvider, softDelete2, when, discardQuery } = commonHooks;
 // !end
 // !code: init
 // const shouldLogToHistory = () => {
@@ -45,7 +45,7 @@ let moduleExports = {
     all: [
       log(),
       iff(shouldAllowApiKeyEndpoints(), validateApiKey()),
-      removeQuery('apiKey'),
+      discardQuery('apiKey'),
       runOnExternal(logToHistory),
       runOnExternal(shouldAuthorizeAction),
       softDelete2()

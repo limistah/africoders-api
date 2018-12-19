@@ -7,26 +7,26 @@ const commonHooks = require('feathers-hooks-common');
 // eslint-disable-next-line no-unused-vars
 const { iff } = commonHooks;
 // eslint-disable-next-line no-unused-vars
-const { create, update, patch, validateCreate, validateUpdate, validatePatch } = require('./profile-data.validate');
+const { validateCreate, validateUpdate, validatePatch } = require('./profile-data.validate');
 // !end
 
 // !code: init // !end
 
 let moduleExports = {
   before: {
-    // !<DEFAULT> code: before
+    // !code: before
     all: [],
     find: [],
     get: [],
-    create: [],
-    update: [],
-    patch: [],
+    create: [validateCreate()],
+    update: [validateUpdate()],
+    patch: [validatePatch()],
     remove: []
     // !end
   },
 
   after: {
-    // !<DEFAULT> code: after
+    // !code: after
     all: [],
     find: [],
     get: [],
@@ -38,7 +38,7 @@ let moduleExports = {
   },
 
   error: {
-    // !<DEFAULT> code: error
+    // !code: error
     all: [],
     find: [],
     get: [],
