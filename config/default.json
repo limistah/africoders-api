@@ -5,6 +5,15 @@
   "unProtectedPaths": [
     "api-keys"
   ],
+  "adminUser": {
+    
+    "email": "administrator@africoders.com",
+    "password": "AFR1_CODERZ",
+    "gender": "Male",
+    "roleId": "",
+    "username": "africoders",
+    "ipAddress": "192.168.8.1"
+  },
   "supportedRoles": [
     {
       "name": "Member",
