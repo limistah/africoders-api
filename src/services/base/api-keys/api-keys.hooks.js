@@ -1,3 +1,5 @@
+const setApiKeyData = require('./hooks/set-api-key-data');
+
 const {
   validateCreate,
   validateUpdate,
@@ -12,7 +14,7 @@ let moduleExports = {
     all: [],
     find: [],
     get: [],
-    create: [validateCreate()],
+    create: [setApiKeyData(), validateCreate()],
     update: [validateUpdate()],
     patch: [validatePatch()],
     remove: []

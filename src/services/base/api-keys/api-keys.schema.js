@@ -13,11 +13,16 @@ let schema = {
 
   // Required fields.
   required: [
-    // !code: schema_required // !end
+    // !code: schema_required
+    'key',
+    'deviceName',
+    // !end
   ],
   // Fields with unique values.
   uniqueItemProperties: [
-    // !code: schema_unique // !end
+    // !code: schema_unique
+    'key'
+    // !end
   ],
 
   // Fields in the model.
@@ -32,6 +37,7 @@ let schema = {
         'generic'
       ]
     },
+    key: {},
     status: { boolean: ['LIVE', 'DEAD'] },
     hits: { type: 'number' },
     deletedAt: { type: 'number', chance: { integer: { min: -1, max: -1 } } }

@@ -24,6 +24,9 @@ let moduleExports = merge({},
         ],
         bsonType: "string"
       },
+      key: {
+        bsonType: "string"
+      },
       status: {
         boolean: [
           "LIVE",
@@ -43,7 +46,11 @@ let moduleExports = merge({},
         },
         bsonType: "number"
       }
-    }
+    },
+    required: [
+      "key",
+      "deviceName"
+    ]
   },
   // !end
   // !code: moduleExports // !end

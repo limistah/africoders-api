@@ -54,7 +54,8 @@
       "adapter": "mongoose",
       "path": "/api-keys",
       "isAuthEntity": false,
-      "graphql": true
+      "graphql": true,
+      "requiresAuth": false
     },
     "histories": {
       "name": "histories",
@@ -122,6 +123,13 @@
         "*app"
       ],
       "singleService": ""
+    },
+    "set-api-key-data": {
+      "fileName": "set-api-key-data",
+      "camelName": "setApiKeyData",
+      "ifMulti": "n",
+      "multiServices": [],
+      "singleService": "apiKeys"
     }
   },
   "connections": {

@@ -46,6 +46,7 @@
     "compression": "^1.7.3",
     "cors": "^2.8.5",
     "cross-env": "^5.2.0",
+    "crypto-random-string": "^1.0.0",
     "feathers-hooks-common": "^4.19.6",
     "feathers-mongoose": "^6.3.0",
     "helmet": "^3.15.0",

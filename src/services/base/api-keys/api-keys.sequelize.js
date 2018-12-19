@@ -12,7 +12,13 @@ let moduleExports = merge({},
   // !<DEFAULT> code: sequelize_model
   {
     deviceName: {
-      type: Sequelize.ENUM(["mobile-android","mobile-ios","mobile-browser","desktop","generic"])
+      type: Sequelize.ENUM(["mobile-android","mobile-ios","mobile-browser","desktop","generic"]),
+      allowNull: false
+    },
+    key: {
+      type: DataTypes.TEXT,
+      unique: true,
+      allowNull: false
     },
     status: {
       type: DataTypes.TEXT

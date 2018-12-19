@@ -18,7 +18,13 @@ let moduleExports = merge({},
         "mobile-browser",
         "desktop",
         "generic"
-      ]
+      ],
+      required: true
+    },
+    key: {
+      type: String,
+      required: true,
+      unique: true
     },
     status: String,
     hits: Number,

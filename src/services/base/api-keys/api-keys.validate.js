@@ -17,8 +17,13 @@ let base = merge({},
   {
     title: "ApiKeys",
     description: "ApiKeys database.",
-    required: [],
-    uniqueItemProperties: [],
+    required: [
+      "key",
+      "deviceName"
+    ],
+    uniqueItemProperties: [
+      "key"
+    ],
     properties: {
       deviceName: {
         enum: [
@@ -28,6 +33,9 @@ let base = merge({},
           "desktop",
           "generic"
         ],
+        type: "string"
+      },
+      key: {
         type: "string"
       },
       status: {
