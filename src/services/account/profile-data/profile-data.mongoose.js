@@ -11,6 +11,7 @@ let moduleExports = merge({},
   // !<DEFAULT> code: model
   {
     firstname: String,
+    userId: String,
     lastname: String,
     biography: String,
     website: String,

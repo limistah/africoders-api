@@ -23,6 +23,9 @@ let base = merge({},
       firstname: {
         type: "string"
       },
+      userId: {
+        type: "string"
+      },
       lastname: {
         type: "string"
       },

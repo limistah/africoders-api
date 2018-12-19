@@ -38,7 +38,6 @@ let moduleExports = merge({},
       type: String,
       required: true
     },
-    profileDataId: String,
     password: {
       type: String,
       required: true

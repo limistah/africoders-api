@@ -17,6 +17,9 @@ let moduleExports = merge({},
       firstname: {
         bsonType: "string"
       },
+      userId: {
+        bsonType: "string"
+      },
       lastname: {
         bsonType: "string"
       },

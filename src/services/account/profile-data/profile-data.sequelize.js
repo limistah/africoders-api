@@ -14,6 +14,9 @@ let moduleExports = merge({},
     firstname: {
       type: DataTypes.TEXT
     },
+    userId: {
+      type: DataTypes.TEXT
+    },
     lastname: {
       type: DataTypes.TEXT
     },

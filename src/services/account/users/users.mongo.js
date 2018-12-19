@@ -43,9 +43,6 @@ let moduleExports = merge({},
       roleId: {
         bsonType: "string"
       },
-      profileDataId: {
-        bsonType: "string"
-      },
       password: {
         bsonType: "string"
       },
