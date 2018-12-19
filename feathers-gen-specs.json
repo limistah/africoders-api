@@ -109,6 +109,15 @@
         "*app"
       ],
       "singleService": ""
+    },
+    "validate-api-key": {
+      "fileName": "validate-api-key",
+      "camelName": "validateApiKey",
+      "ifMulti": "y",
+      "multiServices": [
+        "*app"
+      ],
+      "singleService": ""
     }
   },
   "connections": {

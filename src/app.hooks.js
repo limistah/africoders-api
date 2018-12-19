@@ -1,3 +1,4 @@
+
 // Application hooks that run for every service. (Can be re-generated.)
 const commonHooks = require('feathers-hooks-common');
 // eslint-disable-next-line no-unused-vars
@@ -10,6 +11,8 @@ const escapeAuthCheck = require('./hooks/escape-auth-check');
 const logToHistory = require('./hooks/log-to-history');
 // eslint-disable-next-line no-unused-vars
 const skipRemainingHook = require('./hooks/skip-remaining-hook');
+// eslint-disable-next-line no-unused-vars
+const validateApiKey = require('./hooks/validate-api-key');
 // !<DEFAULT> code: imports
 const log = require('./hooks/log');
 // !end
@@ -73,7 +76,7 @@ let moduleExports = {
     patch: [],
     remove: []
     // !end
-  }
+  },
   // !code: moduleExports // !end
 };
 
