@@ -1,3 +1,5 @@
+const populateProfileData = require('./hooks/populate-profile-data');
+
 const {
   hashPassword,
   protect
@@ -24,7 +26,7 @@ let moduleExports = {
     all: [],
     find: [],
     get: [],
-    create: [validateCreate(), hashPassword()],
+    create: [validateCreate(), hashPassword(), populateProfileData()],
     update: [validateUpdate(), hashPassword()],
     patch: [validatePatch(), hashPassword()],
     remove: []

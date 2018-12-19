@@ -141,6 +141,13 @@
       "ifMulti": "n",
       "multiServices": [],
       "singleService": "apiKeys"
+    },
+    "populate-profile-data": {
+      "fileName": "populate-profile-data",
+      "camelName": "populateProfileData",
+      "ifMulti": "n",
+      "multiServices": [],
+      "singleService": "users"
     }
   },
   "connections": {
