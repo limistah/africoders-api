@@ -2,6 +2,7 @@
 // Configure the Feathers services. (Can be re-generated.)
 let apiKeys = require('./base/api-keys/api-keys.service');
 let histories = require('./base/histories/histories.service');
+let profileData = require('./account/profile-data/profile-data.service');
 let roles = require('./account/roles/roles.service');
 let users = require('./account/users/users.service');
 
@@ -12,6 +13,7 @@ let users = require('./account/users/users.service');
 let moduleExports = function (app) {
   app.configure(apiKeys);
   app.configure(histories);
+  app.configure(profileData);
   app.configure(roles);
   app.configure(users);
   // !code: func_return // !end

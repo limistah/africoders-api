@@ -67,6 +67,17 @@
       "isAuthEntity": false,
       "requiresAuth": false,
       "graphql": true
+    },
+    "profileData": {
+      "name": "profileData",
+      "nameSingular": "profileData",
+      "subFolder": "account",
+      "fileName": "profile-data",
+      "adapter": "mongoose",
+      "path": "/profile-data",
+      "isAuthEntity": false,
+      "requiresAuth": false,
+      "graphql": true
     }
   },
   "hooks": {
