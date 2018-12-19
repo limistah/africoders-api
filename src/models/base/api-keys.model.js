@@ -18,7 +18,7 @@ let moduleExports = function (app) {
   let mongooseClient = app.get('mongooseClient');
   // !code: mongoose_func_init // !end
 
-  // !<DEFAULT> code: mongoose_client
+  // !code: mongoose_client
   const apiKeys = new mongooseClient.Schema(mongooseSchema, { timestamps: true });
   apiKeys.plugin(accessibleFieldsPlugin);
   apiKeys.plugin(accessibleRecordsPlugin);

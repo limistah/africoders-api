@@ -1,18 +1,8 @@
-
-// Hooks for service `apiKeys`. (Can be re-generated.)
-const commonHooks = require('feathers-hooks-common');
-// !code: imports // !end
-
-// !code: used
-// eslint-disable-next-line no-unused-vars
-const { iff } = commonHooks;
-// eslint-disable-next-line no-unused-vars
 const {
   validateCreate,
   validateUpdate,
   validatePatch
 } = require('./api-keys.validate');
-// !end
 
 // !code: init // !end
 

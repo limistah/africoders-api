@@ -1,22 +1,13 @@
-// Hooks for service `users`. (Can be re-generated.)
-const commonHooks = require('feathers-hooks-common');
-// eslint-disable-next-line no-unused-vars
 const {
   hashPassword,
   protect
 } = require('@feathersjs/authentication-local').hooks;
-// !code: imports // !end
 
-// !code: used
-// eslint-disable-next-line no-unused-vars
-const { iff } = commonHooks;
-// eslint-disable-next-line no-unused-vars
 const {
   validateCreate,
   validateUpdate,
   validatePatch
 } = require('./users.validate');
-// !end
 
 // !code: init // !end
 
