@@ -32,4 +32,10 @@ module.exports = async (app) => {
   adminUser = adminUser.username ? adminUser : adminUser[0];
   // eslint-disable-next-line
   console.log(`User '${adminUser.username}:${pass}' has been created`);
+  let apiKeyData = {deviceName: 'generic'};
+  apiKeyData = await seeder(app.service('/api-keys'), apiKeyData, apiKeyData);
+  // sets the data correctly
+  apiKeyData = apiKeyData.deviceName ? apiKeyData : apiKeyData[0];
+  // eslint-disable-next-line
+  console.log(`Generic API KEY: '${apiKeyData.key}'`);
 };
