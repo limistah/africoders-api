@@ -20,7 +20,7 @@ const moduleExports = createLogger({
     new transports.Console(),
     new transports.MongoDB({
       level: 'debug',
-      db: 'mongodb://localhost:27017/africoders_api'
+      db: process.env.NODE_ENV === 'production' ? 'mongodb://super:tionMaisEdtoaj0@ds239703.mlab.com:39703/africoders_api' : 'mongodb://localhost:27017/africoders_api'
     })
   ]
   // !end
