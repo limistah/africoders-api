@@ -1,4 +1,5 @@
 {
-  "host": "africoders-api-app.feathersjs.com",
-  "port": "PORT"
+  "host": "https://africoders-api.herokuapp.com/",
+  "public": "../public",
+  "mongodb": "mongodb://super:tionMaisEdtoaj0@ds239703.mlab.com:39703/africoders_api"
 }
